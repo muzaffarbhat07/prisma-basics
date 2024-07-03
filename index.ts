@@ -6,13 +6,17 @@ async function main() {
     //prisma queries
 
     //create user
-    const user = await prisma.user.create({
-        data: {
-            name: 'muzaffar bhat',
-            email: 'muzaffar@gmail.com'
-        },
-    });
-    console.log(user);
+    // const user = await prisma.user.create({
+    //     data: {
+    //         name: 'muzaffar bhat',
+    //         email: 'muzaffar@gmail.com'
+    //     },
+    // });
+    // console.log(user);
+
+    //get users
+    const users = await prisma.user.findMany();
+    console.log(users);
 }
 
 
