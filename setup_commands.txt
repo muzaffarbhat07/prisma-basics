@@ -1,0 +1,31 @@
+//initialize a new Node.js project
+npm init -y
+
+//install typescript
+npm install typescript ts-node @types/node -D
+/*
+ts-node is a TypeScript execution environment for Node.js. It allows us to run .ts files directly without the need to compile them first.
+
+@types/node provides TypeScript type definitions for Node.js core modules and the standard library.
+*/
+
+//initialize a new typescript project
+npx tsc --init
+
+//install the Prisma CLI
+npm install prisma -D
+
+//initialize a new Prisma project using SQLite as our provider
+npx prisma init --datasource-provider sqlite
+
+//run migration by giving our own name to it
+npx prisma migrate dev --name init
+/*
+A migration is a way to update your db schema. It is a way to keep your db schema in sync with your Prisma schema.
+*/
+
+//To execute a ts file
+npx ts-node index.ts
+
+//start prisma studio
+npx prisma studio

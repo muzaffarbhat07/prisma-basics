@@ -88,7 +88,7 @@ async function main() {
     // console.log(article);
 
 
-    //npx prisma studio
+    //npx prisma studionpx prisma studio
 }
 
 
