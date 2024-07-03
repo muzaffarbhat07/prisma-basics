@@ -80,12 +80,15 @@ async function main() {
     // console.log(user);
 
     //remove first article
-    const article = await prisma.article.delete({
-        where: {
-            id: 1,
-        },
-    });
-    console.log(article);
+    // const article = await prisma.article.delete({
+    //     where: {
+    //         id: 1,
+    //     },
+    // });
+    // console.log(article);
+
+
+    //npx prisma studio
 }
 
 
