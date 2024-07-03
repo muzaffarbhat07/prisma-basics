@@ -52,21 +52,32 @@ async function main() {
     // console.log(user);
 
     //get users along with their articles
-    const users = await prisma.user.findMany({
-        include: {
-            articles: true,
-        },
-    });
+    // const users = await prisma.user.findMany({
+    //     include: {
+    //         articles: true,
+    //     },
+    // });
     // console.log(users);
 
-    users.forEach((user) => {
-        console.log(`User: ${user.name}, Email: ${user.email}`);
-        console.log('Articles: ');
-        user.articles.forEach((article) => {
-            console.log(`- Title: ${article.title}, Body: ${article.body}`);
-        });
-        console.log('\n');
+    // users.forEach((user) => {
+    //     console.log(`User: ${user.name}, Email: ${user.email}`);
+    //     console.log('Articles: ');
+    //     user.articles.forEach((article) => {
+    //         console.log(`- Title: ${article.title}, Body: ${article.body}`);
+    //     });
+    //     console.log('\n');
+    // });
+
+    //update user's name
+    const user = await prisma.user.update({
+        where: {
+            id: 1,
+        },
+        data: {
+            name: 'Muzaffar Bhat Jr.',
+        },
     });
+    console.log(user);
 }
 
 
