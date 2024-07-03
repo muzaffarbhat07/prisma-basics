@@ -69,15 +69,23 @@ async function main() {
     // });
 
     //update user's name
-    const user = await prisma.user.update({
+    // const user = await prisma.user.update({
+    //     where: {
+    //         id: 1,
+    //     },
+    //     data: {
+    //         name: 'Muzaffar Bhat Jr.',
+    //     },
+    // });
+    // console.log(user);
+
+    //remove first article
+    const article = await prisma.article.delete({
         where: {
             id: 1,
         },
-        data: {
-            name: 'Muzaffar Bhat Jr.',
-        },
     });
-    console.log(user);
+    console.log(article);
 }
 
 
