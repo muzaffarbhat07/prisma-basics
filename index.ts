@@ -33,8 +33,23 @@ async function main() {
     // console.log(article);
 
     //get all articles
-    const articles = await prisma.article.findMany();
-    console.log(articles);
+    // const articles = await prisma.article.findMany();
+    // console.log(articles);
+
+    //create a new user and associate it with an article
+    const user = await prisma.user.create({
+        data: {
+            name: 'Bilal Bhat',
+            email: 'bilal@gmail.com',
+            articles: {
+                create: {
+                    title: 'Bilals first article',
+                    body: 'This is Bilals first article'
+                }
+            }
+        }
+    });
+    console.log(user);
 }
 
 
